@@ -1,0 +1,53 @@
+<mat-grid-list  cols="5" rowHeight="80px">
+    <mat-grid-tile
+    *ngFor="let item of title"
+        [colspan]="item.cols"
+        [rowspan]="item.rows"
+        [style.background]="item.color"
+    >
+    
+    <a mat-raised-button *ngIf="item.text === 'One' " >
+        <mat-icon>domain</mat-icon>
+
+        NOTACION
+    </a>
+
+    <section class="example-section" *ngIf="item.text === 'Two' "  >
+        <mat-slide-toggle
+            >
+          <span>DARK MODE</span>
+        </mat-slide-toggle>
+      </section>
+
+      <div *ngIf=" item.text === 'Tree'">
+          <div class="footerTree row">
+            <mat-form-field class="col-xs-8">
+                <input matInput placeholder="Digitar correo" [formControl]="email" type="email" >
+            </mat-form-field>
+            <div class="col-xs-4" style=" margin-top: 5%;">
+                <button mat-raised-button (click)="sendEmail()"  style="background-color:deeppink; color: white;">Enviar</button>
+            </div>
+          </div>
+      </div>
+
+    <div *ngIf="item.text === 'Four'">
+        <span ><mat-icon>school</mat-icon> 
+                MATARIAL DE NOTION
+        </span>
+
+      </div>
+
+    <div *ngIf="item.text === 'Five'">
+        <mat-form-field appearance="fill" class="footerFive">
+            <mat-label>PAIS</mat-label>
+        <mat-select [disabled]="disableSelect.value">
+            <mat-option value="option1">USA</mat-option>
+            <mat-option value="option2">Mexico </mat-option>
+            <mat-option value="option3">Argentina</mat-option>
+        </mat-select>
+        </mat-form-field>
+
+       </div>
+    </mat-grid-tile>
+
+</mat-grid-list>

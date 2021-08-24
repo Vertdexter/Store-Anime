@@ -1,0 +1,55 @@
+<form style="margin: 5%;" [formGroup]="form">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h2>INICIAR SESION</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content style="margin-left: 3%;">
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Ingresa usuario</mat-label>
+                        <input matInput placeholder="Digitar usuario" formControlName="user">
+                    </mat-form-field>
+                    <div *ngIf="fillUser.errors && fillUser.dirty">
+                        <mat-error *ngIf="fillUser.hasError('user_invalid')">
+                            El usuario debe ser menor de 7 caracteres
+                        </mat-error>
+                        <mat-error *ngIf="fillUser.hasError('required')">El campo es necesario</mat-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Ingresa password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <div *ngIf="fillUser.errors && fillUser.dirty">
+                        <mat-error *ngIf="fillUser.hasError('password_invalid')">
+                            El usuario debe ser mayor de 5 caracteres, pero menos de 16 caracteres
+                        </mat-error>
+                        <mat-error *ngIf="fillUser.hasError('required')">El campo es necesario</mat-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <a mat-button routerLink="/log/signup">REGISTARTE AHORA</a>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="row">
+                <div class="col-xs" style="position: absolute; top: 220px ; left: 1000px ;">
+                    <button mat-raised-button color="accent">INICIAR SESION</button>
+                </div>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</form>

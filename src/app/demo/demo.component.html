@@ -1,0 +1,31 @@
+<input type="text" [(ngModel)]="hellow">
+{{hellow}}
+<input type="text" [(ngModel)]="ex">
+{{ex | exponential}}
+
+<div *ngIf="hellow === 'luis'">
+    Esto es div 
+</div>
+
+<div [ngSwitch]="hellow">
+    <p *ngSwitchCase="'Luis'">Hi I'm Luis</p>
+    <p *ngSwitchCase="'Maria'">Hi I'm Maria</p>
+    <p *ngSwitchCase="'Karen'">Hi I'm Karen</p>
+    <p *ngSwitchCase="'Roberto'">Hi I'm Roberto</p>
+    <p *ngSwitchCase="'Fernando'">Hi I'm Fernando</p>
+    <p *ngSwitchCase="'Ernesto'">Hi I'm Ernesto</p>
+    <p *ngSwitchDefault>No exist match</p>
+</div>
+
+<button (click)="addItem()">ADD</button>
+<ul>
+    <li *ngIf="items.length === 0">
+        Empty list
+    </li>
+    <li *ngFor="let name of items; index as i">
+            {{name}} {{i}}
+        <button (click)="deleteItem(i)">Delete this item</button>
+    </li>
+</ul>
+
+
