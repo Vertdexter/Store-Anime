@@ -20,6 +20,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -50,7 +52,8 @@ import { MatFormFieldModule} from '@angular/material/form-field';
     MatSortModule,
     MatMenuModule,
     LayoutModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
     
 
   ],
@@ -72,7 +75,8 @@ import { MatFormFieldModule} from '@angular/material/form-field';
     MatSortModule,
     MatMenuModule,
     LayoutModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
   
   

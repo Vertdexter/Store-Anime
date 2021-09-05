@@ -22,12 +22,34 @@ export class SignUpComponent implements OnInit {
 
   builderForm(){
     this.form = this.formBuilder.group({
-      nombre:     ['', []],
-      apellidos:  ['', []],
-      correo:     ['',[]],
-      usuario:    ['', []],
-      genero:     ['', []]
+      nombre:     ['',  [Validators.required]],
+      apellidos:  ['',  [Validators.required]],
+      correo:     ['',  [Validators.required]],
+      usuario:    ['',  [Validators.required]],
+      password:   [null,[Validators.required]]
     })
   }
+
+  get nombreFill(){
+    return this.form.get('nombre')
+  }
+
+  get apellidosFill(){
+    return this.form.get('apellidos')
+  }
+
+  get correoFill(){
+    return this.form.get('correo')
+  }
+
+  get usuarioFill(){
+    return this.form.get('usuario')
+  }
+
+  get passwordFill(){
+    return this.form.get('password')
+  }
+
+
 
 }

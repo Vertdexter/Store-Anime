@@ -29,6 +29,7 @@ import { FormProductComponent } from './comonents/form-product/form-product.comp
     AdminRoutingModule, 
     ReactiveFormsModule,
     MaterialModule,
+    
   ]
 })
 export class AdminModule { }

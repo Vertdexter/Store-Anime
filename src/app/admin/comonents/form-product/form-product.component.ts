@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 import {MyValidador} from '../../../utils/validators'
 
+
 @Component({
   selector: 'app-form-product',
   templateUrl: './form-product.component.html',
@@ -12,28 +13,42 @@ import {MyValidador} from '../../../utils/validators'
 export class FormProductComponent implements OnInit {
 
   form: FormGroup;
+  dec: number;
+  id: string
   
 
   constructor(
     private formbuilder: FormBuilder,
-    private productsService: ProductsService
+    private productsService: ProductsService,
   ) { 
     this.buildForm();
 
   }
 
   ngOnInit(): void {
+    if (this.dec === 2) {
+      this.productsService.getProduct(this.id).subscribe( response =>{
+        this.form.patchValue(response);
+      })
+    }
   }
 
 
-  
+
   saveProduct(event:Event){
     event.preventDefault();
-    if(this.form.valid){
-      this.productsService.postProduct(this.form.value).subscribe(response =>{
-        console.log(response);
-      })
+    if(true){
+      if (this.dec === 1) {
+        this.productsService.postProduct(this.form.value).subscribe(response =>{
+          console.log(response);
+        })
+      }
     }
+      if (this.dec === 2) {
+       this.productsService.putProduct(this.form.value , this.form.value.id).subscribe(response =>{
+          console.log(response);
+        })        
+      }
   }
 
   private buildForm(){

@@ -28,10 +28,6 @@ const routes: Routes = [
       {
         path: 'products',
         component: ProductListComponent
-      },
-      {
-        path: 'products/create',
-        component: FormProductComponent
       }
     ]
   }

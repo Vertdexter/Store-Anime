@@ -7,16 +7,45 @@
         </mat-card-header>
         <mat-card-content>
             <div class="row">
-                <div class="col-xs-6">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>First name</mat-label>
-                        <input matInput>
+                <div class="col-xs-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" formControlName="nombre">
                     </mat-form-field>
+                    <div *ngIf="nombreFill.errors && nombreFill.dirty">
+                        <mat-error *ngIf="nombreFill.hasError('required')">
+                            El campo es requerido
+                        </mat-error>
+                    </div>
                 </div>
                 <div class="col-xs-6">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Long Last Name That Will Be Truncated</mat-label>
-                        <input matInput>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput type="text" formControlName="apellidos">
+                    </mat-form-field>
+                    <div *ngIf="">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email">
+                    </mat-form-field>
+
+                </div>
+                <div class="col-xs-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Usuario</mat-label>
+                        <input type="text" matInput formControlName="usuario">
+                    </mat-form-field>
+                </div>
+                <div class="col-xs-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password">
                     </mat-form-field>
                 </div>
             </div>
