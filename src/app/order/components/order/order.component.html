@@ -1,0 +1,39 @@
+<mat-stepper>
+    <mat-step>
+        <ng-template matStepLabel>Productos en el carrito</ng-template>
+            
+        <div class="" *ngIf="(products$ | async) as products" >
+            <span *ngIf=" products.length === 0">No exiten productos</span>
+            <div class="row" *ngFor="let product of (products$ | async)">
+                <mat-card class="col-xs-12" >
+                    <mat-card-header>
+                        <mat-card-title> {{product.title}} </mat-card-title>
+                    </mat-card-header>
+                    <mat-dialog-content class="col-xs-12">
+                        <div class="col-xs-12 col-sm-2 col-md-2">
+                            <div class="box">
+                                <img [src]="product.image" [alt]="product.title" class="crop-image">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-5 col-md-5">
+                            <div class="box">
+                                {{product.title}}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-5 col-md-5">
+                            <div class="box">
+                                {{product.price}}
+                            </div>
+                        </div>
+                    </mat-dialog-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Envio</ng-template>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Pago</ng-template>
+    </mat-step>
+</mat-stepper>

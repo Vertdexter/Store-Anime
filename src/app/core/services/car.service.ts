@@ -14,4 +14,10 @@ export class CarService {
   cart$ = this.cart.asObservable();
 
   constructor() { }
+
+addCart(products:Product){
+    this.products = [...this.products, products]
+    this.cart.next(this.products);
+}
+
 }

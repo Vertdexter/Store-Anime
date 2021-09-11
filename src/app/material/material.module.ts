@@ -21,6 +21,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 
@@ -30,9 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
-  declarations: [
-    
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -53,8 +53,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatMenuModule,
     LayoutModule,
     MatFormFieldModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatStepperModule    
 
   ],
   exports: [
@@ -76,7 +76,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatMenuModule,
     LayoutModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule, 
+    MatStepperModule
   ],
   
   

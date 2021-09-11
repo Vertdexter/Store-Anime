@@ -10,6 +10,7 @@ import {
     OnDestroy 
         } from "@angular/core"; '@angular/core';
 import {Product} from '../../../core/models/product.model'
+import { CarService } from "src/app/core/services/car.service";
 
 
 @Component({
@@ -25,9 +26,9 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy{
     
     today = new Date();
 
-    constructor(){
-        console.log('Llamadas');
-    }
+    constructor(
+        private carService : CarService
+    ){}
 
     ngOnChanges(change: SimpleChange){
         console.log('Elemento');
@@ -49,6 +50,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy{
 
     addProduct(){
         console.log('Agregar al carrito');
-        this.productClick.emit(this.product.id)        
+        // this.productClick.emit(this.product.id)  
+        this.carService.addCart(this.product)      
     }
 }

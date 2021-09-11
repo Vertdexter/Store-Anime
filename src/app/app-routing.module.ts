@@ -35,6 +35,10 @@ const routes: Routes = [
         {
           path: 'log',
           loadChildren: () => import ('./log/log.module').then( m => m.LogModule)
+        },
+        {
+          path: 'order',
+          loadChildren: () => import ('./order/order.module').then( m => m.OrderModule)
         }
       ]
     },
